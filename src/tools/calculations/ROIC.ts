@@ -17,14 +17,14 @@ type calculateROICProps = {
     https://www.ruleoneinvesting.com/roic-calculator/
 */
 
-const calculateROIC = ({
+export const calculateROIC = ({
   operatingIncome,
   incomeBeforeTaxRatio,
   totalStockholdersEquity,
   totalDebt,
 }: calculateROICProps) => {
   const NOPAT = operatingIncome * (1 - incomeBeforeTaxRatio)
-  const ROIC = NOPAT / (totalStockholdersEquity - totalDebt)
+  const ROIC = NOPAT / (totalStockholdersEquity + totalDebt)
 
   return ROIC
 }
