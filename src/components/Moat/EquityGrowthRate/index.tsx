@@ -36,8 +36,8 @@ const EquityGrowthRate = ({ keyMetrics }: MoatProps) => {
         <br />
         <br />
         If the business has a positive equity growth rate, it is a good indicator that they have enough money left over
-        to grow the business. Whereas if the equity is not growing it could mean that the business is puting it money
-        back into just maintaining the business.
+        to grow the business. Whereas if the equity is not growing it could mean that the business is puting its money
+        back into just maintaining the business. (keeping the business afloat)
         <br />
         <br />A good growth rate is 10% per year, over the last 10 years.
       </Text>

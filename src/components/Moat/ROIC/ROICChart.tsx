@@ -6,6 +6,16 @@ const ROICChart = ({ data }: any) => {
     height: 400,
     xField: 'date',
     yField: 'roic',
+    yAxis: {
+      label: {
+        formatter: (value: number) => `${(value * 100).toFixed(2)}%`,
+      },
+    },
+    tooltip: {
+      formatter: (value: { roic: number }) => {
+        return { name: 'ROIC', value: `${(value.roic * 100).toFixed(2)}%` }
+      },
+    },
     point: {
       size: 5,
       shape: 'diamond',
