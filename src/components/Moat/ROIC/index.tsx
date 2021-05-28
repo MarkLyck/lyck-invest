@@ -1,4 +1,4 @@
-import { Table, Typography, Space, Divider } from 'antd'
+import { Typography, Space, Divider } from 'antd'
 import loadable from '@loadable/component'
 import { calculateROIC } from 'src/tools/calculations'
 
@@ -11,19 +11,19 @@ type MoatProps = {
   balanceSheets: any[]
 }
 
-const columns = [
-  {
-    title: 'date',
-    dataIndex: 'date',
-    key: 'date',
-  },
-  {
-    title: 'ROIC',
-    dataIndex: 'roic',
-    key: 'roic',
-    render: (value: number) => <Text>{(value * 100).toFixed(2)}%</Text>,
-  },
-]
+// const columns = [
+//   {
+//     title: 'date',
+//     dataIndex: 'date',
+//     key: 'date',
+//   },
+//   {
+//     title: 'ROIC',
+//     dataIndex: 'roic',
+//     key: 'roic',
+//     render: (value: number) => <Text>{(value * 100).toFixed(2)}%</Text>,
+//   },
+// ]
 
 const ROIC = ({ incomeStatements, balanceSheets }: MoatProps) => {
   if (!incomeStatements?.length || !balanceSheets?.length) return null
@@ -70,7 +70,7 @@ const ROIC = ({ incomeStatements, balanceSheets }: MoatProps) => {
       <ROICChart data={ROICDataSource} />
       {ROICDataSource.length >= 5 && <Text>Average ROIC (5 year): {(average5YearROIC * 100).toFixed(2)}%</Text>}
       {ROICDataSource.length >= 10 && <Text>Average ROIC (10 year): {(average10YearROIC * 100).toFixed(2)}%</Text>}
-      <Table dataSource={ROICDataSource} columns={columns} pagination={false} />
+      {/* <Table dataSource={ROICDataSource} columns={columns} pagination={false} /> */}
     </Space>
   )
 }

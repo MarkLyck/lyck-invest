@@ -1,17 +1,16 @@
 import { useState } from 'react'
-import { Space, Input, Button, Typography, Divider } from 'antd'
+import { Space, Input, Button, Divider } from 'antd'
 import { FINANCE_MODELING_BASE_URL, FINANCE_MODELING_PREP_API_KEY } from 'src/common/constants'
 import axios from 'axios'
 
+import Profile from './Profile'
 import Moat from './Moat'
-
-const { Text } = Typography
 
 const LIMIT = 10
 
 const StockChecker = () => {
   const [stockSymbol, setStockSymbol] = useState('')
-  const [profile, setProfile] = useState({})
+  const [profile, setProfile]: any[] = useState({})
   const [incomeStatements, setIncomeStatements] = useState([])
   const [cashflowStatements, setCashflowStatements] = useState([])
   const [balanceSheets, setBalanceSheets] = useState([])
@@ -69,7 +68,7 @@ const StockChecker = () => {
         <Button onClick={getStockInfo}>Evaluate</Button>
       </Space>
       <Divider />
-      <Text>{profile?.companyName}</Text>
+      <Profile profile={profile} />
       <Divider />
       <Moat
         incomeStatements={incomeStatements}

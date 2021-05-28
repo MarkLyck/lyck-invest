@@ -28,7 +28,7 @@ const SalesGrowthRate = ({ incomeStatements, balanceSheets }: MoatProps) => {
         Growth Rate is one of the Big 5 Numbers required to determine whether a company may be a Rule #1 'wonderful
         business'.
         <br />
-        <br />A good growth rate is `{'>'}= 10% per year, over the last 10 years.
+        <br />A good growth rate is {'>'}= 10% per year, over the last 10 years.
       </Text>
       <Text>
         Avg. Sales growth rate:{' '}
